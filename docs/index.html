@@ -12,7 +12,7 @@
     content="Leveraging Large Language Models for Effective and Explainable Multi-Agent Credit Assignment" />
   <meta property="og:url" content="https://iconlab.negarmehr.com/AAMAS-LLM-MCA/" />
 
-  <meta name="twitter:title" content="AAMAS LLM-MCA">
+  <meta name="twitter:title" content="AAMAS LLM-MCA & LLM-TACA">
   <meta name="twitter:description"
     content="Leveraging Large Language Models for Effective and Explainable Multi-Agent Credit Assignment">
   <!-- Keywords for your paper to be indexed by-->
@@ -21,7 +21,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>CDC POLICEd RL</title>
+  <title>AAMAS LLM-MCA & LLM-TACA</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
@@ -61,8 +61,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Leveraging Large Language Models for Effective and Explainable
-              Multi-Agent Credit Assignment</h1>
+            <h1 class="title is-1 publication-title">Leveraging Large Language Models for Effective and Explainable Multi-Agent Credit Assignment</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block"></span>
@@ -93,28 +92,41 @@
                     <span>Paper</span>
                   </a>
                 </span> -->
-
-                <!-- Github link -->
-                <span class="link-block">
-                  <a href="https://github.com/labicon/LLM-MCA" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
+                
                 <!-- ArXiv abstract Link -->
-                <!-- <span class="link-block">
-                  <a href="https://arxiv.org/abs/2407.20456" target="_blank"
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2502.16863" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
                     </span>
                     <span>arXiv</span>
                   </a>
-                </span> -->
+                </span>
+
+                <!-- Github link -->
+                <span class="link-block">
+                  <a href="https://github.com/labicon/LLM-MCA" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark" disabled>
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (Coming Soon)</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a target="_blank"
+                    class="external-link button is-normal is-rounded is-dark" disabled> 
+                    <!-- href="https://google.com" -->
+                    <span class="icon">
+                      <i class="fa-solid fa-database"></i>
+                    </span>
+                    <span>Offline Dataset (Coming Soon)</span>
+                  </a>
+                </span>
+
+                
               </div>
 
 
@@ -153,24 +165,9 @@
             <p>
               Recent efforts in autonomous vehicle coordination and in-space assembly have shown the importance of
               enabling multiple robots collaboration to achieve a shared goal. A common approach for learning this
-              cooperative behavior is to utilize the centralized-training decentralized-execution paradigm. However,
-              this approach also introduces a new challenge: how do we evaluate the contributions of each agent's
-              actions to the overall success or failure. This ``credit assignment'' problem has been extensively studied
-              in the Multi-Agent Reinforcement Learning~(MARL) literature, but with little progress. In fact, humans
-              performing simple inspection of the agents' trajectories often generate better credit evaluations than
-              existing methods. We combine this observation with recent works which show Large Language Models~(LLMs)
-              demonstrate human-level performance at many pattern recognition tasks. Our key idea is to reformulate
-              credit assignment as pattern recognition problems and propose our novel Large Language Model Multi-agent
-              Credit Assignment~(LLM-MCA) method. Our approach utilizes a centralized LLM reward-critic which
-              numerically decomposes the overall reward based on the individualized contribution of each agent in the
-              scenario. We then update the agents' policy networks based on this feedback. We also propose an extension
-              (LLM-TACA) where our LLM-critic performs explicit task assignment by passing an intermediary goal directly
-              to each agent in the scenario. Both our methods far outperform the state-of-the-art on a variety of
-              benchmarks, including Level-Based Foraging, Robotic Warehouse, and our new ``Spaceworld'' benchmark which
+              cooperative behavior is to utilize the centralized-training decentralized-execution paradigm. However, this approach also introduces a new challenge: how do we evaluate the contributions of each agent's actions to the overall success or failure. This "credit assignment" problem has been extensively studied in the Multi-Agent Reinforcement Learning~(MARL) literature, but with little progress. In fact, humans performing simple inspection of the agents' trajectories often generate better credit evaluations than existing methods. We combine this observation with recent works which show Large Language Models~(LLMs) demonstrate human-level performance at many pattern recognition tasks. Our key idea is to reformulate credit assignment as pattern recognition problems and propose our novel Large Language Model Multi-agent Credit Assignment (LLM-MCA) method. Our approach utilizes a centralized LLM reward-critic which numerically decomposes the overall reward based on the individualized contribution of each agent in the scenario. We then update the agents' policy networks based on this feedback. We also propose an extension (LLM-TACA) where our LLM-critic performs explicit task assignment by passing an intermediary goal directly to each agent in the scenario. Both our methods far outperform the state-of-the-art on a variety of benchmarks, including Level-Based Foraging, Robotic Warehouse, and our new ``Spaceworld'' benchmark which
               incorporates safety-related constraints. As an artifact of our methods, we generate large trajectory
-              datasets with each timestep annotated with per-agent reward information, as sampled from our LLM critics.
-              We hope that by making this dataset available, we will enable future works to directly train a set of
-              collaborative, decentralized policies offline.
+              datasets with each timestep annotated with per-agent reward information, as sampled from our LLM critics. We hope that by making this dataset available, we will enable future works to directly train a set of collaborative, decentralized policies offline.
             </p>
           </div>
         </div>
@@ -247,12 +244,7 @@
           <h2 class="title">Overall architecture diagram for our LLM-MCA and LLM-TACA methods</h2>
           <div class="content has-text-justified">
             <p>
-              Our centralized training architecture uti-
-              lizes a centralized LLM-critic instantiated with our base prompt (en-
-              vironment description, our definitions, and task query). At each
-              timestep, we update our LLM-critic with the global reward and lat-
-              est observations from the environment. We then update our agents’
-              policies with the individualized feedback from our critic.
+              Our centralized training architecture utilizes a centralized LLM-critic instantiated with our base prompt (environment description, our definitions, and task query). At each timestep, we update our LLM-critic with the global reward and latest observations from the environment. We then update our agents’ policies with the individualized feedback from our critic.
             </p>
           </div>
 
